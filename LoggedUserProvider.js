@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import React, { createContext, useCallback } from 'react';
+import React, { createContext, useCallback, useMemo } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag/lib/graphql-tag.umd';
 

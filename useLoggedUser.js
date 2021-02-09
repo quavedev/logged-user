@@ -7,6 +7,7 @@ import { LoggedUserContext } from './LoggedUserProvider';
  *   loggedUser: User,
  *   loadingLoggedUser: Boolean,
  *   refetchLoggedUser: function
+ *   logout: function
  * }}
  */
 export const useLoggedUser = () => useContext(LoggedUserContext);
