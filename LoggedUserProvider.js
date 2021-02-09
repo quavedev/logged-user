@@ -11,7 +11,7 @@ const defaultLoggedUserFragment = gql`
   }
 `;
 // https://www.apollographql.com/docs/react/data/queries/#setting-a-fetch-policy
-const defaultFetchPolicy = 'network-only';
+const defaultFetchPolicy = 'cache-and-network';
 
 /**
  * Provide a hook to quickly check or refetch the current user
