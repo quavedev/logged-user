@@ -11,7 +11,7 @@ const defaultLoggedUserFragment = gql`
   }
 `;
 // https://www.apollographql.com/docs/react/data/queries/#setting-a-fetch-policy
-const defaultFetchPolicy = 'cache-and-network';
+const defaultFetchPolicy = 'cache-first';
 
 /**
  * Provide a hook to quickly check or refetch the current user
@@ -32,14 +32,17 @@ export const LoggedUserProvider = ({
   const loggedUserFragment =
     loggedUserFragmentInput || defaultLoggedUserFragment;
 
-  const defaultUserQueryString = useMemo(() => gql`
-    query LoggedUser {
-      loggedUser {
-        ...LoggedUser
+  const defaultUserQueryString = useMemo(
+    () => gql`
+      query LoggedUser {
+        loggedUser {
+          ...LoggedUser
+        }
       }
-    }
-    ${loggedUserFragment}
-  `, [loggedUserFragment]);
+      ${loggedUserFragment}
+    `,
+    [loggedUserFragment]
+  );
 
   const {
     data: { loggedUser } = {},
