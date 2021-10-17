@@ -30,7 +30,7 @@ meteor add quave:logged-user
 
 ```javascript
 //home.js
-import { useLoggedUser } from 'meteor/quave:use-logged-user/useLoggedUser';
+import { useLoggedUser } from 'meteor/quave:logged-user/useLoggedUser';
 
 const Home = () => {
     const { loggedUser } = useLoggedUser();
